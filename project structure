@@ -1,0 +1,22 @@
+OpsPulse-WebOps-Dashboard/
+│
+├── app.py
+├── model.py
+├── config.py
+├── requirements.txt
+├── .gitignore
+│
+├── templates/
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── logs.html
+│   ├── profile.html
+│   ├── change_password.html
+│   ├── 404.html
+│   └── 500.html
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+│
+└── README.md

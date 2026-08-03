@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>500 - Internal Server Error</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="error-card">
+
+        <h1>500</h1>
+
+        <h2>Internal Server Error</h2>
+
+        <p>
+            Oops! Something went wrong while processing your request.
+        </p>
+
+        <p>
+            Please try again after a few moments.
+        </p>
+
+        <br>
+
+        {% if session.get("user_id") %}
+
+        <a class="btn"
+           href="{{ url_for('dashboard') }}">
+            Return to Dashboard
+        </a>
+
+        {% else %}
+
+        <a class="btn"
+           href="{{ url_for('login') }}">
+            Go to Login
+        </a>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

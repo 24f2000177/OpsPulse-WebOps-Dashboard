@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>OpsPulse Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <h2>OpsPulse</h2>
+
+    <div>
+
+        <span>
+            Welcome,
+            <b>{{ username }}</b>
+        </span>
+
+        |
+
+        <span>
+            {{ role }}
+        </span>
+
+        |
+
+        <a href="{{ url_for('profile') }}">
+            Profile
+        </a>
+
+        |
+
+        <a href="{{ url_for('logs') }}">
+            Logs
+        </a>
+
+        |
+
+        <a href="{{ url_for('change_password') }}">
+            Change Password
+        </a>
+
+        |
+
+        <a href="{{ url_for('logout') }}">
+            Logout
+        </a>
+
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <h1>WebOps Server Monitoring Dashboard</h1>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>CPU Usage</h3>
+
+            <h2 id="cpu">0%</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Memory Usage</h3>
+
+            <h2 id="memory">0%</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Disk Usage</h3>
+
+            <h2 id="disk">0%</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Status</h3>
+
+            <h2 id="status">Healthy</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Hostname</h3>
+
+            <p id="hostname">Loading...</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Operating System</h3>
+
+            <p id="os">Loading...</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Server Uptime</h3>
+
+            <p id="uptime">Loading...</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Last Updated</h3>
+
+            <p id="last_updated">Loading...</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <h2>OpsPulse</h2>
+
+    <div>
+
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+
+        |
+
+        <a href="{{ url_for('logs') }}">Logs</a>
+
+        |
+
+        <a href="{{ url_for('change_password') }}">
+            Change Password
+        </a>
+
+        |
+
+        <a href="{{ url_for('logout') }}">
+            Logout
+        </a>
+
+    </div>
+
+</header>
+
+<div class="container">
+
+    <div class="profile-card">
+
+        <h1>My Profile</h1>
+
+        <table class="profile-table">
+
+            <tr>
+
+                <th>User ID</th>
+
+                <td>{{ user.id }}</td>
+
+            </tr>
+
+            <tr>
+
+                <th>Username</th>
+
+                <td>{{ user.username }}</td>
+
+            </tr>
+
+            <tr>
+
+                <th>Role</th>
+
+                <td>{{ user.role }}</td>
+
+            </tr>
+
+            <tr>
+
+                <th>Account Created</th>
+
+                <td>{{ user.created_at }}</td>
+
+            </tr>
+
+        </table>
+
+        <br>
+
+        <a class="btn"
+           href="{{ url_for('dashboard') }}">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
